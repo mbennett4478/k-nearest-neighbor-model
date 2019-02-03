@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a62ee500-53da-4c22-8b93-af508d2a7074" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bennett_matthew_stephen_shield_assignment1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/bennett_matthew_stephen_shield_assignment1.ipynb" afterDir="false" />
-    </list>
+    <list default="true" id="a62ee500-53da-4c22-8b93-af508d2a7074" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +34,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-11" />
     <option name="width" value="1941" />
     <option name="height" value="2111" />
@@ -96,7 +94,7 @@
     <option name="totallyTimeSpent" value="1523000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1294" height="1407" extended-state="0" />
+    <frame x="-7" y="0" width="1294" height="1407" extended-state="1" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959481" />
