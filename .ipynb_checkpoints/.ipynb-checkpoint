@@ -50,7 +50,7 @@
     "def recall(true_classes, predicted_classes):\n",
     "    return np.sum(predicted_classes[np.where(predicted_classes == 1 )]  == true_classes[np.where(predicted_classes == 1 )])/(np.sum(predicted_classes[np.where(predicted_classes == 1 )]  == true_classes[np.where(predicted_classes == 1 )])+np.sum(predicted_classes[np.where(true_classes == 1 )]  != true_classes[np.where(true_classes == 1 )]))\n",
     "\n",
-    "def f1_score(true_classes, predicted_classes):\n",
+    "def f1_score2(true_classes, predicted_classes):\n",
     "    return 2*((precision(true_classes, predicted_classes)*recall(true_classes, predicted_classes))/(precision(true_classes, predicted_classes)+recall(true_classes, predicted_classes)))"
    ]
   },
@@ -109,6 +109,28 @@
     "    x,y=roc_curve(true_classes, class_probabilities)\n",
     "    auc=abs(np.trapz(y,x, axis=-1))\n",
     "    return auc"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def pr_curve(true_classes, class_probabilities):\n",
+    "    \"\"\"Given true classes and class probabilities calculates precision and recall values and returns them and the thresholds as lists that can be used to construct a PR curve\"\"\"\n",
+    "    true_classes, class_probabilities = np.asarray(true_classes) , np.asarray(class_probabilities)\n",
+    "    p_values=[]\n",
+    "    r_values=[]\n",
+    "    thresholds=[]\n",
+    "    for threshold in range(100):\n",
+    "        predicted_classes=(class_probabilities > float(threshold/100.)).astype(int)\n",
+    "        p=np.sum(predicted_classes[np.where(predicted_classes == 1 )]  == true_classes[np.where(predicted_classes == 1 )])/predicted_classes[np.where(predicted_classes == 1 )].shape[0]\n",
+    "        r=np.sum(predicted_classes[np.where(predicted_classes == 1 )]  == true_classes[np.where(predicted_classes == 1 )])/true_classes[np.where(true_classes == 1 )].shape[0]\n",
+    "        p_values.append(p)\n",
+    "        r_values.append(r)\n",
+    "        thresholds.append(threshold)\n",
+    "    return p_values,r_values, thresholds"
    ]
   },
   {
